@@ -1,5 +1,9 @@
-def hello():
-    print("Це демонстраційний Python-файл у репозиторії Git-flow.")
+from script import hello
 
-if __name__ == "__main__":
-    hello()
+def test_hello():
+    # цей тест завжди зелений
+    assert hello() is None
+
+def test_fail():
+    # цей тест завжди червоний для демонстрації
+    assert 1 == 2
