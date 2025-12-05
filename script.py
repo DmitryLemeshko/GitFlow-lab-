@@ -1,9 +1,7 @@
-from script import hello
+from data_store import DataStore
+from utils import normalize_text
 
-def test_hello():
-    # цей тест завжди зелений
-    assert hello() is None
-
-def test_fail():
-    # цей тест завжди червоний для демонстрації
-    assert 1 == 2
+def process_message(text, store: DataStore):
+    clean = normalize_text(text)
+    store.add_record(clean)
+    return f"Processed: {clean}"
