@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <title>Demo Form</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #result { margin-top: 10px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Demo: ім'я користувача</h1>
+
+  <label for="name">Ім'я:</label>
+  <input id="name" type="text" />
+  <button id="submit">Обробити</button>
+
+  <div id="result" aria-live="polite"></div>
+
+  <script>
+    document.getElementById('submit').addEventListener('click', function() {
+      var v = document.getElementById('name').value || '';
+      var out = v.trim().toUpperCase();
+      if (!out) out = 'UNKNOWN USER';
+      document.getElementById('result').textContent = out;
+    });
+  </script>
+</body>
+</html>
